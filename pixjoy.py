@@ -6,13 +6,16 @@
 
 import pixrc
 import paramiko
+import subprocess
 import uinput
 import time
 
 def flash():
-    print "Enter your IP on the artoo network (enter if you're g):",
-    key = raw_input()
-
+    key = subprocess.check_output("hostname -I", shell=True)[:-2]
+    
+    #print "Enter your IP on the artoo network (enter if you're g):",
+    #key = raw_input()
+    
     if key != "":
         print "Flashing IP..."
     
