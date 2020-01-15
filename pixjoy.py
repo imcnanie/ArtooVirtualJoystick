@@ -12,12 +12,11 @@ import time
 
 def flash():
     key = subprocess.check_output("hostname -I", shell=True)[:-2]
-    
     #print "Enter your IP on the artoo network (enter if you're g):",
     #key = raw_input()
     
     if key != "":
-        print "Flashing IP..."
+        print "Flashing IP: " + key +" ..."
     
         pcc = paramiko.Transport(("10.1.1.1", 22))
         pcc.connect(username = "root", password = "TjSDBkAu")
@@ -33,7 +32,7 @@ def flash():
         sesh.close()
         pcc.close()
     else:
-        print "lol"
+        print "no ip found"
 
 # via: https://github.com/tuomasjjrasanen/python-uinput/blob/ffbf1c90458811a359e5bb300db2e16e347a2cb5/examples/joystick.py
 events = (

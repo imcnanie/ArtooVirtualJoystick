@@ -83,7 +83,7 @@ class controller():
                 #os.nice(-20)
 
 	    	self.rcDsmLock = threading.Lock()
-                print " yeah ", self.OUTPUT_TRUE
+                #print " yeah ", self.OUTPUT_TRUE
 	    	if False: #self.DSM_SEND_ENABLE and (not self.opts.sim or not self.OUTPUT_TRUE):
     			self.sender = threading.Thread(name = "dsmSend", target = self.dsmSend, args = (self.rcDsmDev, self.rcDsmBaud))
     			self.sender.daemon = True
